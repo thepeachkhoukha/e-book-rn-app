@@ -1,11 +1,10 @@
 import React from 'react'
-import { Image, StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, View, } from 'react-native';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import AppText from '../components/AppText';
 import colors from '../utils/colors';
 import BookLoverGirl from '../assets/bookLoverGirl.svg';
-import WelcomeScreenBackground from "../assets/welcomeScreenBackground.svg"
 
 export default function ProfileScreen() {
     return (
@@ -59,8 +58,19 @@ export default function ProfileScreen() {
                     <AppText style={{color: colors.primary}}>View all</AppText>
                 </View>
             </View>
-            <View style={styles.flexRowContainer}>
-                
+            <View style={[styles.flexRowContainer, { height: "20%"}]}>
+                <View style={{ position: "absolute", zIndex: 1}}>
+                    <View style={styles.currentBookImageContainer}>
+                        <Image source={require("../assets/childrenbook.jpg")} style={styles.currentBookImage}/> 
+                    </View>
+                </View>
+                <View style={[styles.flexColumnContainer, styles.currentBookDetails,]}>
+                    <View>
+                        <AppText style={styles.currentBookTitle}>Amara The Brave</AppText>
+                        <AppText style={styles.currentBookAuthor}>Matt Zhang</AppText>
+                        <AppText style={styles.currentBookLastRead}>Last read 2020.10.10</AppText>
+                    </View>
+                </View>
             </View>
         </View>
     )
@@ -112,9 +122,44 @@ const styles = StyleSheet.create({
         height: "100%",
         width: "90%",
     },
-    
+    currentBookAuthor: {
+        color: colors.grey,
+        fontSize: 16,
+        marginBottom: 5,
+    },
+    currentBookDetails: {
+        backgroundColor: colors.creamWhite,
+        borderRadius: 10,
+        marginLeft: 95, 
+        marginTop: 10,
+        width: "70%",
+        zIndex: -1, 
+    },
+    currentBookLastRead: {
+        color: colors.primary
+    },
+    currentBookImage: {
+        borderRadius: 10,
+        height: 150,
+        width: 120,
+    },
+    currentBookImageContainer: {
+        marginTop: -20, 
+        marginLeft: -170, 
+        shadowColor: "#000",
+        shadowOpacity: 0.45,
+        shadowRadius: 10,
+        shadowOffset: {
+            height: 2,
+            width: 0,
+        },
+    },
+    currentBookTitle: {
+        fontWeight: "800",
+        marginBottom: 5
+    },
     flex: {
-        flex: 1
+        flex: 1,
     },
     flexColumnContainer: {
         alignItems: "center",
@@ -129,22 +174,22 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     label: {
-        color: colors.grey
+        color: colors.grey,
     },
     location: {
-        textAlign: "center"
+        textAlign: "center",
     },
     locationContainer: {
         alignItems: "center", 
         justifyContent: "flex-end",
-        marginLeft: 10
+        marginLeft: 10,
     },
     name: {
         fontWeight: "800",
-        fontSize: 22
+        fontSize: 22,
     },
     number: {
-        fontWeight: "600"
+        fontWeight: "600",
     },
     profileImage: {
         height: 100,
