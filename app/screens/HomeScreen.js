@@ -25,10 +25,10 @@ export default function HomeScreen() {
             </View>
             <View style={styles.bookItemsContainer}>
                 <View style={styles.bookItem}>
-                        <BookItem imageSource={require("../assets/bookCover.jpg")} backgroundColor={colors.pink} author="Marget Atwood" title="The testaments"/>
+                        <BookItem  backgroundColor={colors.pink} author="Marget Atwood" title="The testaments"/>
                 </View>
                 <View style={styles.bookItem}>
-                        <BookItem imageSource={require("../assets/bookCover2.png")} backgroundColor={colors.lightBlue} author="Tayloy Jenkins Reid" title="Daisy Jones and the Six"/>
+                        <BookItem  backgroundColor={colors.lightBlue} author="Tayloy Jenkins Reid" title="Daisy Jones and the Six"/>
                 </View>
             </View>
         

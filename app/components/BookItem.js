@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Image, Modal, StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
+import { Image, Modal, StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import colors from '../utils/colors';
