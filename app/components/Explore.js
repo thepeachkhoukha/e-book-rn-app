@@ -16,7 +16,6 @@ export default function Explore() {
 
         if(response.ok) {
             setBooks(result["books"]);
-            console.log(result["books"])
         }
         else{
             setErrorMessage(result.errorMessage);

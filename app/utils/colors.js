@@ -9,4 +9,5 @@ export default {
   primary: "#2799fa",
   white: "#fff",
   khaki: "#F0E68C",
+  green: "#5fd889",
 };
