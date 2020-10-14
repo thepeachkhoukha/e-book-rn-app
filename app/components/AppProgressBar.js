@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import * as Progress from 'react-native-progress';
 import colors from '../utils/colors';
@@ -28,9 +28,9 @@ const styles = StyleSheet.create({
         color: colors.primary,
     },
     percentageContainer: {
-        marginLeft: 10
+        marginLeft: 10,
     },
     progressBarContainer: {
-        marginTop: 7
+        marginTop: 7,
     }
 })
