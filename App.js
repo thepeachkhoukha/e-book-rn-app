@@ -1,15 +1,16 @@
 import * as React from 'react';
+import { NavigationContainer } from "@react-navigation/native";
 
-import HomeScreen from './app/screens/HomeScreen';
-import Screen from "./app/components/Screen"; 
-import ProfileScreen from './app/screens/ProfileScreen';
+import navigationTheme from "./app/navigation/navigationTheme";
+import AppNavigator from "./app/navigation/AppNavigator";
+
 
 export default function App() {
  
   return (
-    <Screen>
-      <ProfileScreen />
-    </Screen>
+    <NavigationContainer theme={navigationTheme}>
+      <AppNavigator />
+    </NavigationContainer>
   );
 }
  

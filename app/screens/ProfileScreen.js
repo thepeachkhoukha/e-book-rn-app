@@ -6,78 +6,81 @@ import AppText from '../components/AppText';
 import colors from '../utils/colors';
 import BookLoverGirl from '../assets/bookLoverGirl.svg';
 import AppProgressBar from '../components/AppProgressBar';
+import Screen from '../components/Screen';
 
 export default function ProfileScreen() {
     return (
-        <View style={styles.flexColumnContainer, styles.flex}>
-            <View style={[styles.flexRowContainer, {justifyContent: "space-between", padding: 20}]}>
-                <View style={styles.flexColumnContainer}>
-                    <AppText style={styles.number}>188</AppText>
-                    <AppText style={styles.label}>Follower</AppText>
-                </View>
-                <View style={styles.onlineContainer}>
-                    <View style={styles.profileImageContainer}>
-                        <Image source={require("../assets/picture.png")} style={styles.profileImage}/>
+        <Screen>
+            <View style={styles.flexColumnContainer, styles.flex}>
+                <View style={[styles.flexRowContainer, {justifyContent: "space-between", padding: 20}]}>
+                    <View style={styles.flexColumnContainer}>
+                        <AppText style={styles.number}>188</AppText>
+                        <AppText style={styles.label}>Follower</AppText>
+                    </View>
+                    <View style={styles.onlineContainer}>
+                        <View style={styles.profileImageContainer}>
+                            <Image source={require("../assets/picture.png")} style={styles.profileImage}/>
+                        </View>
+                    </View>
+                    <View style={styles.flexColumnContainer}>
+                        <AppText style={styles.number}>29</AppText>
+                        <AppText style={styles.label}>Reading</AppText>
                     </View>
                 </View>
-                <View style={styles.flexColumnContainer}>
-                    <AppText style={styles.number}>29</AppText>
-                    <AppText style={styles.label}>Reading</AppText>
-                </View>
-            </View>
-            <View style={[styles.flexRowContainer, {marginTop: 20}]}>
-                <View style={styles.flexColumnContainer}>
-                    <AppText style={styles.name}>Khouloud Khezami</AppText>
-                    <View style={styles.flexRowContainer}>
-                        <MaterialCommunityIcons name="map-marker"
-                                    size={30}
-                                    color={colors.grey}
-                                />
-                        <View style={styles.locationContainer}>
-                            <AppText style={styles.location}>Bari, Italy</AppText>
+                <View style={[styles.flexRowContainer, {marginTop: 20}]}>
+                    <View style={styles.flexColumnContainer}>
+                        <AppText style={styles.name}>Khouloud Khezami</AppText>
+                        <View style={styles.flexRowContainer}>
+                            <MaterialCommunityIcons name="map-marker"
+                                        size={30}
+                                        color={colors.grey}
+                                    />
+                            <View style={styles.locationContainer}>
+                                <AppText style={styles.location}>Bari, Italy</AppText>
+                            </View>
                         </View>
                     </View>
                 </View>
-            </View>
-            <View style={styles.bannerContainer}>    
-                <View style={[styles.containerWithShadow, styles.flexRowContainer]}>
-                    <View style={styles.bannerTextContainer}>
-                        <AppText style={styles.bannerText}>Booking Prime</AppText>
-                    </View>
-                    <View style={styles.bannerBackgroundContainer}>
-                        <View style={styles.bannerBackground}>
-                            <BookLoverGirl width= "150%" height= "170%"/>
+                <View style={styles.bannerContainer}>    
+                    <View style={[styles.containerWithShadow, styles.flexRowContainer]}>
+                        <View style={styles.bannerTextContainer}>
+                            <AppText style={styles.bannerText}>Booking Prime</AppText>
+                        </View>
+                        <View style={styles.bannerBackgroundContainer}>
+                            <View style={styles.bannerBackground}>
+                                <BookLoverGirl width= "150%" height= "170%"/>
+                            </View>
                         </View>
                     </View>
                 </View>
-            </View>
-            <View style={[styles.flexRowContainer, styles.actionsContainer]}>
-                <View>
-                    <AppText style={{fontWeight: "800", fontSize: 24}}>Continue Reading</AppText>
-                </View>
-                <View>
-                    <AppText style={{color: colors.primary}}>View all</AppText>
-                </View>
-            </View>
-            <View style={[styles.flexRowContainer, { height: "20%", marginTop: 10}]}>
-                <View style={{ position: "absolute", zIndex: 1}}>
-                    <View style={styles.currentBookImageContainer}>
-                        <Image source={require("../assets/childrenbook.jpg")} style={styles.currentBookImage}/> 
+                <View style={[styles.flexRowContainer, styles.actionsContainer]}>
+                    <View>
+                        <AppText style={{fontWeight: "800", fontSize: 24}}>Continue Reading</AppText>
+                    </View>
+                    <View>
+                        <AppText style={{color: colors.primary}}>View all</AppText>
                     </View>
                 </View>
-                <View style={[styles.flexColumnContainer, styles.currentBookDetails, {height: "120%"}]}>
-                    <View style={{marginLeft: 40}}>
-                        <AppText style={styles.currentBookTitle}>Amara The Brave</AppText>
-                        <AppText style={styles.currentBookAuthor}>Matt Zhang</AppText>
-                        <AppText style={styles.currentBookLastRead}>Last read 2020.10.10</AppText>
-                        <View>
-                            <AppProgressBar progress={0.8} />
+                <View style={[styles.flexRowContainer, { height: "20%", marginTop: 10}]}>
+                    <View style={{ position: "absolute", zIndex: 1}}>
+                        <View style={styles.currentBookImageContainer}>
+                            <Image source={require("../assets/childrenbook.jpg")} style={styles.currentBookImage}/> 
                         </View>
                     </View>
-                    
+                    <View style={[styles.flexColumnContainer, styles.currentBookDetails, {height: "120%"}]}>
+                        <View style={{marginLeft: 40}}>
+                            <AppText style={styles.currentBookTitle}>Amara The Brave</AppText>
+                            <AppText style={styles.currentBookAuthor}>Matt Zhang</AppText>
+                            <AppText style={styles.currentBookLastRead}>Last read 2020.10.10</AppText>
+                            <View>
+                                <AppProgressBar progress={0.8} />
+                            </View>
+                        </View>
+                        
+                    </View>
                 </View>
             </View>
-        </View>
+        </Screen>
     )
 }
 

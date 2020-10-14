@@ -4,6 +4,7 @@ import AppTabView from '../components/AppTabView';
 import AppText from '../components/AppText'
 
 import BookItem from "../components/BookItem";
+import Screen from '../components/Screen';
 import { renderScene, renderTabBar } from '../navigation/HomeTabViewNavigation';
 import colors from '../utils/colors';
 
@@ -18,22 +19,24 @@ const routes= [
 export default function HomeScreen() {
 
     return (
-        <View style={styles.container}>
-            <View style={styles.interestActionContainer}>
-                <AppText style={styles.interests}>Your Interest</AppText>
-                <AppText style={styles.showAll}>Show All</AppText>
-            </View>
-            <View style={styles.bookItemsContainer}>
-                <View style={styles.bookItem}>
-                        <BookItem  backgroundColor={colors.pink} author="Marget Atwood" title="The testaments"/>
+        <Screen>
+            <View style={styles.container}>
+                <View style={styles.interestActionContainer}>
+                    <AppText style={styles.interests}>Your Interest</AppText>
+                    <AppText style={styles.showAll}>Show All</AppText>
                 </View>
-                <View style={styles.bookItem}>
-                        <BookItem  backgroundColor={colors.lightBlue} author="Tayloy Jenkins Reid" title="Daisy Jones and the Six"/>
+                <View style={styles.bookItemsContainer}>
+                    <View style={styles.bookItem}>
+                            <BookItem  backgroundColor={colors.pink} author="Marget Atwood" title="The testaments"/>
+                    </View>
+                    <View style={styles.bookItem}>
+                            <BookItem  backgroundColor={colors.lightBlue} author="Tayloy Jenkins Reid" title="Daisy Jones and the Six"/>
+                    </View>
                 </View>
-            </View>
         
-            <AppTabView renderTabBar={renderTabBar} routes_={routes} renderScene={renderScene} initialLayout={initialLayout}/>
-        </View>
+                <AppTabView renderTabBar={renderTabBar} routes_={routes} renderScene={renderScene} initialLayout={initialLayout}/>
+            </View>
+        </Screen>
     )
 }
 
