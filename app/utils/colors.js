@@ -1,6 +1,6 @@
 export default {
   black: "#000000",
-  creamWhite: "#f8f6f7",
+  creamWhite: "#f3f5f9",
   lightBlue: "#acdcf2",
   lightGreen: "#b2dfdc",
   lightPurple: "#d6b5dd",

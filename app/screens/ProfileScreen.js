@@ -1,10 +1,11 @@
 import React from 'react'
-import { Image, StyleSheet, View, } from 'react-native';
+import { Image, StyleSheet, View, Dimensions} from 'react-native';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import AppText from '../components/AppText';
 import colors from '../utils/colors';
 import BookLoverGirl from '../assets/bookLoverGirl.svg';
+import AppProgressBar from '../components/AppProgressBar';
 
 export default function ProfileScreen() {
     return (
@@ -58,18 +59,22 @@ export default function ProfileScreen() {
                     <AppText style={{color: colors.primary}}>View all</AppText>
                 </View>
             </View>
-            <View style={[styles.flexRowContainer, { height: "20%"}]}>
+            <View style={[styles.flexRowContainer, { height: "20%", marginTop: 10}]}>
                 <View style={{ position: "absolute", zIndex: 1}}>
                     <View style={styles.currentBookImageContainer}>
                         <Image source={require("../assets/childrenbook.jpg")} style={styles.currentBookImage}/> 
                     </View>
                 </View>
-                <View style={[styles.flexColumnContainer, styles.currentBookDetails,]}>
-                    <View>
+                <View style={[styles.flexColumnContainer, styles.currentBookDetails, {height: "120%"}]}>
+                    <View style={{marginLeft: 40}}>
                         <AppText style={styles.currentBookTitle}>Amara The Brave</AppText>
                         <AppText style={styles.currentBookAuthor}>Matt Zhang</AppText>
                         <AppText style={styles.currentBookLastRead}>Last read 2020.10.10</AppText>
+                        <View>
+                            <AppProgressBar progress={0.8} />
+                        </View>
                     </View>
+                    
                 </View>
             </View>
         </View>
@@ -130,17 +135,18 @@ const styles = StyleSheet.create({
     currentBookDetails: {
         backgroundColor: colors.creamWhite,
         borderRadius: 10,
-        marginLeft: 95, 
+        marginLeft: 80, 
         marginTop: 10,
-        width: "70%",
+        width: "75%",
         zIndex: -1, 
     },
     currentBookLastRead: {
-        color: colors.primary
+        color: colors.primary,
+        marginBottom: 10
     },
     currentBookImage: {
         borderRadius: 10,
-        height: 150,
+        height: 200,
         width: 120,
     },
     currentBookImageContainer: {
